@@ -1,4 +1,4 @@
-let productsDb = require("../db/productsDb");
+let productsDb = require("../data/productsDb");
 
 let indexController = {
     descripcion: function (req,res){
