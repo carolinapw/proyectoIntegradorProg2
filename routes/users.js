@@ -15,6 +15,9 @@ router.get('/profile/edit', usersController.editar);
 
 router.get('/profile/follow', usersController.seguir);
 
+//router.get('/profile/unfollow', usersController.dejarDeSeguir);
+
+
 
 
 module.exports = router;

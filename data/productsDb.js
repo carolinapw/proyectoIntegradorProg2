@@ -1,79 +1,100 @@
 let productsDb = {
   usuario: 
         {
-          "email": "caro@udesa.edu.ar",
-          "usuario": "caro",
-          "contraseña": "12345",
-          "fecha de nacimiento": "16/03/2003",
-          "nro de documento": 204085302,
+          "email": "lucia.gonzalez@gmail.com",
+          "usuario": "lu_gonzalez",
+          "contraseña": "prog2",
+          "fecha de nacimiento": "10/05/2003",
+          "nro de documento": 44983276,
           "foto de perfil": "foto.jpg" 
         },
+        
   productos: [
         {
           "name": "Adidas",
           "descripcion": "10ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiX7Y-m6tjcAhWRylkKHSFDBVcQjRx6BAgBEAU&url=https%3A%2F%2Fwww.walgreens.com%2Fstore%2Fc%2Fadidas-moves-him-eau-de-toilette-natural-spray%2FID%3Dprod2412-product&psig=AOvVaw3ZTeiYXbrg5-oo7uIqDcEG&ust=1533658771103926",
-          "fecha de carga": 3
+          "image": "../public/images/products/adidas.jpg",
+          "fecha de carga": "30/11/2022"
         },
         {
           "name": "GUCCI",
           "descripcion": "50ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj_qf-L69jcAhVnqlkKHeVHAVIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hsn.com%2Fproducts%2Fgucci-premiere-by-gucci-edp-spray-for-women-17-oz%2F7680166&psig=AOvVaw0OmULSI4hNjfIYdWaB9HVS&ust=1533658923240454",
-          "fecha de carga": 4
+          "image": "../public/images/products/gucci_bloom.jpg",
+          "fecha de carga": "26/12/2022"
         },
         {
-          "name": "FOGG",
+          "name": "Marc Jacobs",
           "descripcion": "100ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwiKr4q169jcAhUSuVkKHfZJC1YQjRx6BAgBEAU&url=https%3A%2F%2Fwww.flipkart.com%2Fperfumes%2Ffogg~brand%2Fpr%3Fsid%3Dt06%252Cr3o%252Caa1&psig=AOvVaw1F90I4cfnjXPAifWeyK5tV&ust=1533659076257931",
-          "fecha de carga": 4
+          "image": "../public/images/products/marc-jacobs-daisy.jpg",
+          "fecha de carga": "12/09/2021"
         },
         {
           "name": "Paco Rabanne",
           "descripcion": "50ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj_qf-L69jcAhVnqlkKHeVHAVIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hsn.com%2Fproducts%2Fgucci-premiere-by-gucci-edp-spray-for-women-17-oz%2F7680166&psig=AOvVaw0OmULSI4hNjfIYdWaB9HVS&ust=1533658923240454",
-          "fecha de carga": 4
+          "image": "../public/images/products/paco_rabbane.jpg",
+          "fecha de carga": "03/09/2022"
         },
         {
           "name": "Nina Ricci",
-          "descripcion": "50ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj_qf-L69jcAhVnqlkKHeVHAVIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hsn.com%2Fproducts%2Fgucci-premiere-by-gucci-edp-spray-for-women-17-oz%2F7680166&psig=AOvVaw0OmULSI4hNjfIYdWaB9HVS&ust=1533658923240454",
-          "fecha de carga": 4
+          "descripcion": "100ml",
+          "image": "../public/images/products/nina-ricci.jpg",
+          "fecha de carga": "08/06/2021"
         },
         {
           "name": "Giorgio Armani",
-          "descripcion": "50ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj_qf-L69jcAhVnqlkKHeVHAVIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hsn.com%2Fproducts%2Fgucci-premiere-by-gucci-edp-spray-for-women-17-oz%2F7680166&psig=AOvVaw0OmULSI4hNjfIYdWaB9HVS&ust=1533658923240454",
-          "fecha de carga": 4
+          "descripcion": "30ml",
+          "image": "../public/images/products/armani.jpg",
+          "fecha de carga": "10/10/2020"
         },
         {
           "name": "Dior",
           "descripcion": "50ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj_qf-L69jcAhVnqlkKHeVHAVIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hsn.com%2Fproducts%2Fgucci-premiere-by-gucci-edp-spray-for-women-17-oz%2F7680166&psig=AOvVaw0OmULSI4hNjfIYdWaB9HVS&ust=1533658923240454",
-          "fecha de carga": 4
+          "image": "../public/images/products/dior.jpg",
+          "fecha de carga": "14/05/2022"
         },
         {
           "name": "Esteé Lauder",
-          "descripcion": "50ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj_qf-L69jcAhVnqlkKHeVHAVIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hsn.com%2Fproducts%2Fgucci-premiere-by-gucci-edp-spray-for-women-17-oz%2F7680166&psig=AOvVaw0OmULSI4hNjfIYdWaB9HVS&ust=1533658923240454",
-          "fecha de carga": 4
+          "descripcion": "100ml",
+          "image": "../public/images/products/esteeLauder_beautifulBelle.jpg",
+          "fecha de carga": "02/02/2021"
         },
         {
           "name": "DKNY",
-          "descripcion": "50ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj_qf-L69jcAhVnqlkKHeVHAVIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hsn.com%2Fproducts%2Fgucci-premiere-by-gucci-edp-spray-for-women-17-oz%2F7680166&psig=AOvVaw0OmULSI4hNjfIYdWaB9HVS&ust=1533658923240454",
-          "fecha de carga": 4
+          "descripcion": "100ml",
+          "image": "../public/images/products/dkny-bedelicious.jpg",
+          "fecha de carga": "18/03/2023"
         },
         {
           "name": "Michael Kors",
-          "descripcion": "50ml",
-          "image": "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwj_qf-L69jcAhVnqlkKHeVHAVIQjRx6BAgBEAU&url=https%3A%2F%2Fwww.hsn.com%2Fproducts%2Fgucci-premiere-by-gucci-edp-spray-for-women-17-oz%2F7680166&psig=AOvVaw0OmULSI4hNjfIYdWaB9HVS&ust=1533658923240454",
-          "fecha de carga": 4
+          "descripcion": "30ml",
+          "image": "../public/images/products/michaelKors_wonderlust.jpg",
+          "fecha de carga": "07/03/2021"
         },
       ],
   comentarios: [
     {
-      "nombreUsuario": "Ori",
-      "textoDelComentario": "Muy buen producto",
+      "nombreUsuario": "isabel_lopez",
+      "textoDelComentario": "Muy buen producto.",
+      "imagenDePerfil": "fotoPerfil.jpg", 
+    },
+    {
+      "nombreUsuario": "juanperezzz",
+      "textoDelComentario": "Muy buena duración.",
+      "imagenDePerfil": "fotoPerfil.jpg", 
+    },
+    {
+      "nombreUsuario": "carrasco_ana",
+      "textoDelComentario": "Me encantó. Siempre recibo comentarios nuevos sobre lo rico que es.",
+      "imagenDePerfil": "fotoPerfil.jpg", 
+    },
+    {
+      "nombreUsuario": "mariana_esposito",
+      "textoDelComentario": "De primerísima calidad.",
+      "imagenDePerfil": "fotoPerfil.jpg", 
+    },
+    {
+      "nombreUsuario": "soria.fran",
+      "textoDelComentario": "Una maravilla. Es un aroma con notas de madera, cítrico y con un tono dulce. Me pareció un buen regalo. El aroma es muy duradero y el packaging esta muy cuidado. Le doy 10.",
       "imagenDePerfil": "fotoPerfil.jpg", 
     }
   ]

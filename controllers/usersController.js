@@ -13,7 +13,10 @@ let usersController = {
     },
     seguir: function (res, render) {
         return res.render('profile') //qué página que renderiza?
-    }
+    },
+    // dejarDeSeguir: function (req, res) {
+    //     return res.render()
+    // }
 }
 
 module.exports = usersController
