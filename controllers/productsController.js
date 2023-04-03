@@ -1,20 +1,20 @@
 let productsController = {
 
     detalle: function (req, res) {
-        res.send("Hola")
+        return res.render("product")
     },
-    edit: function (req, res) {
+    // edit: function (req, res) {
         
-    },
-    comment: function (req, res) {
+    // },
+    // comment: function (req, res) {
         
-    },
-    borrar: function (req, res) {
+    // },
+    // borrar: function (req, res) {
         
-    },
-    agregar: function (req, res) {
+    // },
+    // agregar: function (req, res) {
         
-    }
+    // }
 }
 
 
