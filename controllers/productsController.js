@@ -1,7 +1,13 @@
 let productsController = {
 
     detalle: function (req, res) {
-        return res.render("product")
+        let id = req.params.id;
+        let resultados = [];
+
+        //falta completar
+
+
+        return res.render("product", )
     },
     edit: function (req, res) {
         return res.render('product-add')
