@@ -3,7 +3,18 @@ var router = express.Router();
 
 let usersController = require('../controllers/usersController');
 
+
 /* GET users listing. */
-router.get('/', usersController.perfil);
+router.get('/profile', usersController.perfil);
+
+router.get('/register', usersController.registro);
+
+router.get('/login', usersController.logIn);
+
+router.get('/profile/edit', usersController.editar);
+
+router.get('/profile/follow', usersController.seguir);
+
+
 
 module.exports = router;
