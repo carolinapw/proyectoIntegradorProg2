@@ -83,26 +83,31 @@ let productsDb = {
       ],
   comentarios: [
     {
+      id: 1,
       nombreUsuario: "isabel_lopez",
       textoDelComentario: "Muy buen producto.",
       imagenDePerfil: "fotoPerfil.jpg", 
     },
     {
+      id: 2,
       nombreUsuario: "juanperezzz",
       textoDelComentario: "Muy buena duración.",
       imagenDePerfil: "fotoPerfil.jpg", 
     },
     {
+      id: 3,
       nombreUsuario: "carrasco_ana",
       textoDelComentario: "Me encantó. Siempre recibo comentarios nuevos sobre lo rico que es.",
       imagenDePerfil: "fotoPerfil.jpg", 
     },
     {
+      id: 4,
       nombreUsuario: "mariana_esposito",
       textoDelComentario: "De primerísima calidad.",
       imagenDePerfil: "fotoPerfil.jpg", 
     },
     {
+      id: 5,
       nombreUsuario: "soria.fran",
       textoDelComentario: "Una maravilla. Es un aroma con notas de madera, cítrico y con un tono dulce. Me pareció un buen regalo. El aroma es muy duradero y el packaging esta muy cuidado. Le doy 10.",
       imagenDePerfil: "fotoPerfil.jpg", 

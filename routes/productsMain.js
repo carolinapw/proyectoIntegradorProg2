@@ -6,7 +6,7 @@ router.get('/:id', productsController.detalle);
 
 router.get('/:id/edit', productsController.edit);
 
-// router.get('/comment', productsController.comment);
+//router.get('/comment', productsController.comment);
 
 // router.get('/borrar', productsController.borrar);
 

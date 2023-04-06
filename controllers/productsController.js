@@ -3,22 +3,30 @@ let db = require('../data/productsDb');
 let productsController = {
 
     detalle: function (req, res) {
-        let id = req.params.id;
+        let idRuta = req.params.id;
         let resultados = [];
 
-        // if (id<) {
+        if (idRuta < db.productos.length) {
+            for (let i = 0; i < db.productos.length; i++) {          
+                if (idRuta == db.productos[i].id) {
+                    resultados.push(db.productos[i]);
+                }
+            }
             
-        // }
-        //falta completar
-
-
-        return res.render("product", )
+        }
+        return res.render('product', {
+            productsDb: resultados[0],
+            commentsDb: db.comentarios
+        })
+        
     },
     edit: function (req, res) {
         return res.render('product-add')
     },
     // comment: function (req, res) {
-    //     return res.render()
+        
+    //     return res.render('product', {commentsDb: db.comentarios})
+        
     // },
     // borrar: function (req, res) {
     //     return res.render('product-add')

@@ -5,7 +5,7 @@ let usersController = require('../controllers/usersController');
 
 
 /* GET users listing. */
-router.get('/profile', usersController.perfil);
+router.get('/profile/:id', usersController.perfil);
 
 router.get('/register', usersController.registro);
 
