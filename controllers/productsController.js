@@ -1,9 +1,14 @@
+let db = require('../data/productsDb');
+
 let productsController = {
 
     detalle: function (req, res) {
         let id = req.params.id;
         let resultados = [];
 
+        // if (id<) {
+            
+        // }
         //falta completar
 
 
