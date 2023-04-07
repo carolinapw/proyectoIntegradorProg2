@@ -4,11 +4,11 @@
 
 /*====== Variables ======*/
 :root {
-  --yellow: #2ee9be;
+  --yellow: #ff818f;
   --dark-blue: #03264C; /* no lo cambié*/
-  --light-blue: #26c6a3;
+  --light-blue: #792c49;
   --gray: #666666; /* no lo cambié*/
-  --light-gray: #ddfff0; /* ebebeb*/
+  --light-gray: white; /* ebebeb*/
   --green: #39b54a; /* no lo cambié*/ 
   --base-font-family: 'Roboto', sans-serif
 }
@@ -470,10 +470,10 @@ textarea.form-input {
 }
 
 .btn{
-  background-color: #1259c3;
+  background-color: #792c49;
   padding: 10px 20px;
   border-radius: 4px;
-  color: #fff;
+  color: white;
 }
 
 
@@ -484,9 +484,9 @@ textarea.form-input {
     text-align: right;
   }
 
-  .banner {
+  /* .banner {
     height: 320px;
-  }
+  } */
 
   .btn-toggle-navbar {
     display: none;
