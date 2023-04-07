@@ -21,7 +21,7 @@ let productsController = {
         
     },
     edit: function (req, res) {
-        return res.render('product-add')
+        return res.render('product-add');
     },
     // comment: function (req, res) {
         
@@ -32,7 +32,7 @@ let productsController = {
     //     return res.render('product-add')
     // },
     agregar: function (req, res) {
-        return res.render('product-add')
+        return res.render('product-add');
     }
 }
 
