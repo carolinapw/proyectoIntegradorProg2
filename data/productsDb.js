@@ -1,12 +1,13 @@
 let productsDb = {
   usuario: 
         {
+          id: 1,
           email: "lucia.gonzalez@gmail.com",
           usuario: "lu_gonzalez",
           contraseña: "prog2",
           fechaDeNacimiento: "10/05/2003",
           documento: 44983276,
-          fotoPerfil: "foto.jpg" 
+          fotoPerfil: "mujer.jpeg" 
         },
         
   productos: [

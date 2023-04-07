@@ -1,9 +1,14 @@
+let db = require('../data/productsDb')
+
 let usersController = {
     perfil: function (req, res) {
-        return res.render('profile');
+        return res.render('profile', {
+            infoUsuario: db.usuario,
+            productsDb: db.productos
+        });
     },
     registro: function (req, res) {
-        return res.render('register');
+        return res.render('register', {infoUsuario: db.usuario});
     },
     logIn: function (req, res) {
         return res.render('login');
@@ -13,7 +18,7 @@ let usersController = {
     },
     seguir: function (res, render) {
         return res.render('profile') //qué página que renderiza?
-    },
+    }
     // dejarDeSeguir: function (req, res) {
     //     return res.render()
     // }
