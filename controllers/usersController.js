@@ -11,7 +11,7 @@ let usersController = {
         return res.render('register', {infoUsuario: db.usuario});
     },
     logIn: function (req, res) {
-        return res.render('login');
+        return res.render('login', {logInDb: db.usuario});
     },
     editar: function (req, res) {
         return res.render('profile-edit');
