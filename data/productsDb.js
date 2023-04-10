@@ -13,71 +13,71 @@ let productsDb = {
   productos: [
         {
           id: 1,
-          name: "Adidas",
-          descripcion: "10ml",
+          name: "ADIDAS Ice Dive",
+          descripcion: "10ml. Como una verdadera explosión de frescura translúcida y helada, Ice Dive es la fragancia masculina de Adidas para hombres que buscan placeres intensos.",
           image: "adidas.jpg",
           fechaCarga: "30/11/2022"
         },
         {
           id: 2,
-          name: "GUCCI",
-          descripcion: "50ml",
+          name: "GUCCI Bloom",
+          descripcion: "50ml. Capturando el espíritu de las mujeres contemporáneas, diversas yauténticas de Gucci, las notas de Bloom de tuberosa natural y Jazmíncrean un aroma floral blanco inesperadamente rico en la piel.",
           image: "gucci_bloom.jpg",
           fechaCarga: "26/12/2022"
         },
         {
           id: 3,
-          name: "Marc Jacobs",
-          descripcion: "100ml",
+          name: "MARC JACOBS Daisy",
+          descripcion: "100ml. Una eau de toilette florida, fresca y aterciopelada con dejosamaderados, verdes y almizclados.",
           image: "marc-jacobs-daisy.jpg",
           fechaCarga: "12/09/2021"
         },
         {
           id: 4,
-          name: "Paco Rabanne",
-          descripcion: "50ml",
+          name: "PACO RABANNE Lady Million",
+          descripcion: "50ml.  Lady Million Fabulous, nacecon el ímpetu cautivador de la música y el alegre ritmo del baile, paraconvertirse en una fragancia exuberante y adictiva que se completa conuna vibración floral y luz nocturna.",
           image: "paco_rabbane.jpg",
           fechaCarga: "03/09/2022"
         },
         {
           id: 5,
-          name: "Nina Ricci",
-          descripcion: "100ml",
+          name: "NINA RICCI Rouge",
+          descripcion: "100ml. La fragancia Nina Rouge eau de toilette ofrece la frescura perfecta para épocas de calor. Al caracterizarse por sus aromas ligeros podés usar la cantidad que quieras sin miedo a excederte.",
           image: "nina-ricci.jpg",
           fechaCarga: "08/06/2021"
         },
         {
           id: 6,
-          name: "Giorgio Armani",
-          descripcion: "30ml",
+          name: "GIORGIO ARMANI Acqua Di Gio",
+          descripcion: "30ml. Descubrí el perfume de la masculinidad salvaje, profunda y misteriosa. Familia olfativa: Acuática. Notas de salida: bergamota. Notas de corazón: geranio, romero,salvia. Notas de fondo: pachuli, incienso.",
           image: "armani.jpg",
           fechaCarga: "10/10/2020"
         },
         {
           id: 7,
-          name: "Dior",
-          descripcion: "50ml",
+          name: "DIOR J'adore",
+          descripcion: "50ml. Un aroma floral luminoso, alegre, asentado y decidido.",
           image: "dior.jpg",
           fechaCarga: "14/05/2022"
         },
         {
           id: 8,
-          name: "Esteé Lauder",
-          descripcion: "100ml",
+          name: "ESTEÉ LAUDER Beautiful Belle",
+          descripcion: "100ml. Más que una fragancia, es una actitud. DKNY Be Delicious tiene un aromajugoso, fresco y floral que desprende un carisma divertido y espontáneo.",
           image: "esteeLauder_beautifulBelle.jpg",
           fechaCarga: "02/02/2021"
         },
         {
           id: 9,
-          name: "DKNY",
-          descripcion: "100ml",
+          name: "DKNY Be delicious",
+          descripcion: "100ml. Más que una fragancia, es una actitud. DKNY Be Delicious tiene un aromajugoso, fresco y floral que desprende un carisma divertido y espontáneo.",
           image: "dkny-bedelicious.jpg",
           fechaCarga: "18/03/2023"
         },
         {
           id: 10,
-          name: "Michael Kors",
-          descripcion: "30ml",
+          name: "MICHAEL KORS Wonderlust",
+          descripcion: "30ml. Una mezcla de lujosas esencias se combinan con notas de especias de flores orientales. El aroma de esta deliciosa fragancia comienza conuna nota de bergamota italiana y de pimienta rosa. Brotes florales cautivan el provocativo aroma de Michael Kors Wonderlust",
           image: "michaelKors_wonderlust.jpg",
           fechaCarga: "07/03/2021"
         },
