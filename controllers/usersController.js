@@ -14,7 +14,7 @@ let usersController = {
         return res.render('login', {logInDb: db.usuario});
     },
     editar: function (req, res) {
-        return res.render('profile-edit');
+        return res.render('profile-edit', {infoUsuario: db.usuario});
     },
     seguir: function (res, render) {
         return res.render('profile') //qué página que renderiza?
