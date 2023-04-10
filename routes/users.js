@@ -5,7 +5,6 @@ let usersController = require('../controllers/usersController');
 
 
 /* GET users listing. */
-router.get('/profile/:id', usersController.perfil);
 
 router.get('/register', usersController.registro);
 
@@ -15,6 +14,7 @@ router.get('/profile/edit', usersController.editar);
 
 router.get('/profile/follow', usersController.seguir);
 
+router.get('/profile/:id', usersController.perfil);
 //router.get('/profile/unfollow', usersController.dejarDeSeguir);
 
 

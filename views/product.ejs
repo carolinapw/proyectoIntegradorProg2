@@ -15,14 +15,14 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="./images/products/<%= productsDb.image %>" alt="" class="product-detail-img">
+					<img src="/images/products/<%= productsDb.image %>" alt="" class="product-detail-img">
 					<p class="product-detail-description texto"><%= productsDb.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments texto">
 						<% for (let i=0; i < 5; i++) { %>
 							<article>
-							<img src="./images/users/" alt="">
+							<img src="/images/users/<%= commentsDb[i].imagenDePerfil %>" alt="">
 							<div class="data">
 								<p class="user">
 								<strong> <a href="/users/profile/<%= commentsDb[i].id %>"> <%= commentsDb[i].nombreUsuario %> </a> </strong>
