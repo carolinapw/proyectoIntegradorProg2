@@ -8,9 +8,9 @@
   --dark-blue: #03264C; /* no lo cambié*/
   --light-blue: #792c49;
   --gray: #666666; /* no lo cambié*/
-  --light-gray: white; /* ebebeb*/
+  --light-gray: white; 
   --green: #39b54a; /* no lo cambié*/ 
-  --base-font-family: 'Roboto', sans-serif
+  /*--base-font-family: 'Open Sans', sans-serif;*/
 }
 
 
@@ -43,6 +43,11 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.main-header_credit-link {
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 figure {
@@ -96,6 +101,7 @@ hr {
   border-radius: 3px;
   height: 40px;
   font-size: 1.5em;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .search-form_button {
@@ -172,6 +178,7 @@ hr {
   font-size: 2.4em;
   font-weight: 400;
   color: var(--gray);
+  font-family: 'Schibsted Grotesk', sans-serif;;
 }
 
 .product-box {
@@ -243,6 +250,10 @@ hr {
   text-align: center
 }
 
+.texto {
+  font-family: 'Libre Franklin', sans-serif;
+} 
+
 .product-box:hover {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
 }
@@ -257,6 +268,10 @@ hr {
   box-shadow: 0 0 5px var(--green);
 }
 
+.formularios {
+  font-family: 'Libre Franklin', sans-serif;
+}
+
 /*====== Footer ======*/
 .main-footer {
   background-color: #ffffff;
@@ -266,6 +281,7 @@ hr {
 
 .footer-data {
   text-align: center;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .footer-data i {
@@ -467,6 +483,7 @@ textarea.form-input {
 .main-title{
   font-size: 25px;
   margin-bottom: 10px;
+  font-family: 'Schibsted Grotesk', sans-serif;
 }
 
 .btn{
