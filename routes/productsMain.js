@@ -10,7 +10,7 @@ router.get('/:id/edit', productsController.edit);
 
 // router.get('/borrar', productsController.borrar);
 
-router.get('/agregar', productsController.agregar);
+// router.get('/agregar', productsController.agregar);
 
 
 
