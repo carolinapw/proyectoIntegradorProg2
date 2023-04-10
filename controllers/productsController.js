@@ -21,7 +21,10 @@ let productsController = {
         
     },
     edit: function (req, res) {
-        return res.render('product-add', {productsDb:db.productos}, {infoUsuario:db.usuario});
+        return res.render('product-add', {
+            productsDb: db.productos,
+            infoUsuario: db.usuario
+        });
     },
     // comment: function (req, res) {
         
