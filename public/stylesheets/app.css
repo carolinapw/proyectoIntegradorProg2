@@ -43,7 +43,8 @@ a {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  font-family: 'Open Sans', sans-serif;
+  /*font-family: 'Open Sans', sans-serif;*/
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .main-header_credit-link {
@@ -251,7 +252,7 @@ hr {
 }
 
 .texto {
-  font-family: 'Libre Franklin', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 } 
 
 .product-box:hover {
@@ -392,6 +393,7 @@ hr {
   border-radius: 8px;
   border: none;
   margin-bottom: 15px;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 .action-button {
@@ -467,6 +469,9 @@ textarea.form-input {
   min-height: 140px;
   resize: vertical;
   padding: 15px;
+}
+.forms{
+  margin: 5px;
 }
 
 /*====== Profile ======*/

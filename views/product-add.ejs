@@ -12,21 +12,21 @@
 				<h2 class="products-title">Agregar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
-			<h2 class="col-12 texto"> 
+			<h2 class="col-12 formularios"> 
 				<form action="/users/profile/<%= infoUsuario.id  %>" method ="GET">
-					<div>
+					<div class="forms">
 						<input type="file" name="imagen" value="">
 					</div>
-					<div>
+					<div class="forms">
 						<input type="text" name="producto" value="" placeholder="Nombre del producto">
 					</div>
-					<div>
+					<div class="forms">
 						<input type="text" name="descripcion" value="" placeholder="Descripción del producto">
 					</div>
-					<div>
+					<div class="forms">
 						<input type="date" name="date" value="">
 					</div>
-					<div>
+					<div class="forms">
 						<button class="formularios" type="submit">Agregar producto</button>
 					</div>
 				</form>
