@@ -1,4 +1,5 @@
 let db = require('../data/productsDb');
+//let db = require('../database/models');
 
 let productsController = {
 
