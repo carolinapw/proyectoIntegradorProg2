@@ -23,13 +23,19 @@ let indexController = {
     },
     search: function (req, res) {
         db.Product.findAll({
-            where: [
-                
-                    {nombreProducto: {[op.like]: "%" + req.query.search + "%"}}
-                    //{descripcion: {[op.like]: "%" + req.query.search + "%"}}
-                
+            where: {
+                [op.or]: [
+                    {nombreProducto: {[op.like]: "%" + req.query.search + "%"}},
+                    {descripcion: {[op.like]: "%" + req.query.search + "%"}}
                 
                 ]
+            },
+            order: [
+                ['createdAt', 'DESC']
+            ],
+            include: [
+                {association: "user"}
+            ]
         })
             .then(function (resultadosSearch) {
                 return res.render("search-results", {productsDb: resultadosSearch})

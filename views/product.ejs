@@ -7,7 +7,7 @@
 	<!-- product detail -->
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
-			<h2 class="products-title"><%= productsDb.name %></h2> 
+			<h2 class="products-title"><%= productsDb.nombreProducto %></h2> 
 			<p class="product-detail-description">
 				<a href="/products/<%= productsDb.id %>/edit">Editar</a>
 			</p>
@@ -17,18 +17,18 @@
 		<div class="product-detail">
 			<div class="row">
 				<article class="col-12 col-lg-8 product-detail-info">
-					<img src="/images/products/<%= productsDb.image %>" alt="" class="product-detail-img">
+					<img src="/images/products/<%= productsDb.imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description texto"><%= productsDb.descripcion %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments texto">
-						<% for (let i=0; i < 5; i++) { %>
+						<% for (let i=0; i < productsDb.comment.length; i++) { %>
 							<article>
-							<img src="/images/users/<%= commentsDb[i].imagenDePerfil %>" alt="">
+							<img src="/images/users/<%= productsDb.comment[i].user.fotoPerfil %>" alt="">
 							<div class="data">
 								<p class="user">
-								<strong> <a href="/users/profile/<%= commentsDb[i].id %>"> <%= commentsDb[i].nombreUsuario %> </a> </strong>
-								<%= commentsDb[i].textoDelComentario %></p>
+								<strong> <a href="/users/profile/<%= productsDb.comment[i].user.id %>"> <%= productsDb.comment[i].user.usuario %> </a> </strong>
+								<%= productsDb.comment[i].texto %></p>
 							</div>
 						</article>
 						<% } %>
