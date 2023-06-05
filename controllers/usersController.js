@@ -33,21 +33,30 @@ let usersController = {
         db.User.findOne ({
             where: [{email: req.body.email}]
         })
-        .then(function (usuario) {
-            if (usuario != null) {
-                errores.message = 'El email ya existe, elija uno nuevo';
-                res.locals.errores = errores;
-                return res.render('register');
-            } else {
-                // let passEncriptada = bcrypt.hashSync(req.body.pass, 10)
-                // let user = {
-                //     usuario: req.body.usuario,
-                //     email: req.body.email,
-                //     pass: passEncriptada
-                   
-                // }
+            .then(function (usuario) {
+                if (usuario != null) {
+                    errores.message = 'El email ya existe, elija uno nuevo';
+                    res.locals.errores = errores;
+                    return res.render('register');
+                } else {
+                    let passEncriptada = bcrypt.hashSync(req.body.pass, 10)
+                    let user = {
+                        usuario: req.body.usuario,
+                        email: req.body.email,
+                        password: passEncriptada,
+                        fechaNacimiento: req.body.date,
+                        documento: req.body.number
+                        //fotoPerfil: req.body.
+                    }
+                    db.User.create(user) 
+                        .then(function (userCreado) {
+                            return res.redirect('/')
+                        })
+                        .catch(function(error) {
+                            console.log(error);
+                        })
 
-            }
+                }
         })
     }
 
