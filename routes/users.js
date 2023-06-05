@@ -6,7 +6,8 @@ let usersController = require('../controllers/usersController');
 
 /* GET users listing. */
 
-router.get('/register', usersController.registro);
+router.get('/register', usersController.showRegistro);
+router.post('/register', usersController.registro);
 
 router.get('/login', usersController.logIn);
 
