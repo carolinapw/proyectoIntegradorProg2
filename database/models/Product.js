@@ -19,18 +19,21 @@ module.exports = function (sequelize, dataTypes) {
         usuarios_id: {
             type: dataTypes.INTEGER
         },
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE
         }
 
     }
 
     let config = {
-        createdAt: "created_at", //indica al modelo cómo se llama el campo de auditoría en la tabla.
-        updatedAt: "updated_at",  //indica al modelo cómo se llama el campo de auditoría en la tabla.
+        tableName: "productos",
+        timestamps: true,
+        //underscored: false //false si van a usar camelCase, true si usan snake_case
+        //createdAt: "created_at", //indica al modelo cómo se llama el campo de auditoría en la tabla.
+        //updatedAt: "updated_at",  //indica al modelo cómo se llama el campo de auditoría en la tabla.
     }
 
     let producto = sequelize.define(alias, cols, config);

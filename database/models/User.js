@@ -25,18 +25,20 @@ module.exports = function (sequelize, dataTypes) {
         fotoPerfil: {
             type: dataTypes.STRING
         },
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE
         }
 
     }
 
     let config = {
-        createdAt: "created_at", //indica al modelo cómo se llama el campo de auditoría en la tabla.
-        updatedAt: "updated_at",  //indica al modelo cómo se llama el campo de auditoría en la tabla.
+        tableName: "usuarios",
+        timestamps: true,
+        //createdAt: "created_at", //indica al modelo cómo se llama el campo de auditoría en la tabla.
+        //updatedAt: "updated_at",  //indica al modelo cómo se llama el campo de auditoría en la tabla.
     }
 
     let usuario = sequelize.define(alias, cols, config);

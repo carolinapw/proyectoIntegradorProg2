@@ -16,18 +16,20 @@ module.exports = function (sequelize, dataTypes) {
         texto: {
             type: dataTypes.STRING(600)
         },
-        created_at: {
+        createdAt: {
             type: dataTypes.DATE
         },
-        updated_at: {
+        updatedAt: {
             type: dataTypes.DATE
         }
 
     }
 
     let config = {
-        createdAt: "created_at", //indica al modelo cómo se llama el campo de auditoría en la tabla.
-        updatedAt: "updated_at",  //indica al modelo cómo se llama el campo de auditoría en la tabla.
+        tableName: "comentarios",
+        timestamps: true,
+        //createdAt: "created_at", //indica al modelo cómo se llama el campo de auditoría en la tabla.
+        //updatedAt: "updated_at",  //indica al modelo cómo se llama el campo de auditoría en la tabla.
     }
 
     let comentario = sequelize.define(alias, cols, config);

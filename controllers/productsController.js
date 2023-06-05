@@ -21,7 +21,7 @@ let productsController = {
         })
         
     },
-    edit: function (req, res) {
+    showEdit: function (req, res) {
         return res.render('product-add', {
             productsDb: db.productos,
             infoUsuario: db.usuario
