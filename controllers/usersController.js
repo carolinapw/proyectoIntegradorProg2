@@ -5,11 +5,25 @@ let db = require('../database/models');
 
 let usersController = {
     perfil: function (req, res) {
-        return res.render('profile', {
-            infoUsuario: db.usuario,
-            productsDb: db.productos
-        });
+
+        let userId = req.params.id
+
+        db.User.findByPk(userId, {
+            include: [
+                {association:'product'},
+                {association:'comment'}
+            ]
+        })
+            .then(function (dataUsuario) {
+                return res.render('profile', {infoUsuario: dataUsuario}) //cambiar cosas en el profile.ejs
+            })
+
+        // return res.render('profile', {
+        //     infoUsuario: db.usuario,
+        //     productsDb: db.productos
+        // });
     },
+
     showRegistro: function (req, res) {
         return res.render('register', {infoUsuario: db.usuario});
     },
@@ -65,6 +79,11 @@ let usersController = {
     logIn: function (req, res) {
         return res.render('login', {logInDb: db.usuario});
     },
+    signIn: function (req, res) {
+        
+    },
+
+
     editar: function (req, res) {
         return res.render('profile-edit', {infoUsuario: db.usuario});
     },

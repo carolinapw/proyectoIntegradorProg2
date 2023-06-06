@@ -10,6 +10,8 @@ router.get('/register', usersController.showRegistro);
 router.post('/register', usersController.registro);
 
 router.get('/login', usersController.logIn);
+router.post('/login', usersController.signIn);
+
 
 router.get('/profile/edit', usersController.editar);
 
