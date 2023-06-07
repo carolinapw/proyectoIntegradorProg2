@@ -1,6 +1,6 @@
 //let db = require('../data/productsDb')
 let db = require('../database/models');
-//let bcrypt = require('bcryptjs');
+let bcrypt = require('bcryptjs');
 
 
 let usersController = {
@@ -27,8 +27,8 @@ let usersController = {
     showRegistro: function (req, res) {
         return res.render('register');
     },
-    registro: function () { //toma los datos del formulario y los usa para crear el usuario en la base de datos.
-        
+    registro: function (req, res) { //toma los datos del formulario y los usa para crear el usuario en la base de datos.
+        //return res.send(req.body)
     let errores = {};
 
     if(req.body.email=='') {
@@ -57,7 +57,7 @@ let usersController = {
                     let user = {
                         usuario: req.body.usuario,
                         email: req.body.email,
-                        password: passEncriptada,
+                        contrasena: passEncriptada,
                         fechaNacimiento: req.body.date,
                         documento: req.body.number
                         //fotoPerfil: req.body.
