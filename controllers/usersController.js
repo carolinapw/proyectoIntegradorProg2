@@ -25,7 +25,7 @@ let usersController = {
     },
 
     showRegistro: function (req, res) {
-        return res.render('register', {infoUsuario: db.usuario});
+        return res.render('register');
     },
     registro: function () { //toma los datos del formulario y los usa para crear el usuario en la base de datos.
         
@@ -77,7 +77,7 @@ let usersController = {
     },
 
     logIn: function (req, res) {
-        return res.render('login', {logInDb: db.usuario});
+        return res.render('login');
     },
     signIn: function (req, res) {
         
