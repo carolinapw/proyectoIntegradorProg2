@@ -12,6 +12,8 @@ router.post('/register', usersController.registro);
 router.get('/login', usersController.logIn);
 router.post('/login', usersController.signIn);
 
+router.post('/logout', usersController.logout);
+
 
 router.get('/profile/edit', usersController.editar);
 

@@ -3,6 +3,8 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+//Requiero el módulo de session
+let session = require('express-session');
 
 var indexRouter = require('./routes/index');
 let productsRouter = require('./routes/productsMain');
@@ -22,6 +24,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+//Inicio la sesión antes de las rutas
+app.use(session({
+  secret: 'parfumerie',
+  saveUninitialized: true,
+  resave:false
+}));
+
+//Header logueado y deslogueado
+app.use(function(req, res, next) {
+  if (req.session.user != undefined) {
+    res.locals.user = req.session.user
+  }
+  return next();
+  });
 
 app.use('/', indexRouter);
 app.use('/products', productsRouter);

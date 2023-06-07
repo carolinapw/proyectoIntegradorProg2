@@ -77,13 +77,66 @@ let usersController = {
     },
 
     logIn: function (req, res) {
-        return res.render('login');
-    },
-    signIn: function (req, res) {
+        //Si el usuario está logueado que vaya a home
+        if (req.session.user != undefined) {
+            res.redirect('/') //Hay que poner en index.ejs lo del header logueado y no logueado
+        } else {
+            return res.render('login');
+        }
         
     },
+    signIn: function (req, res) {
+        let errores = {}
 
+        db.User.findOne({
+                where: [
+                    {email: req.body.email}
+                ]
+            })
+            .then(function (usuarioLogueado) {
+                if(usuarioLogueado == null) {
+                    errores.message = 'Completar el campo email';
+                    res.locals.errores = errores;
+                    return res.render('login')
+                }
+                if(usuarioLogueado==undefined) { // No funciona
+                    errores.message = 'El email no existe';
+                    res.locals.errores = errores;
+                    return res.render('login')
+                }
 
+                //Validar la contraseña antes de loguear
+                let check = bcrypt.compareSync(req.body.pass, usuarioLogueado.password)
+                
+                if(check == false) {
+                    errores.message = 'La contraseña es incorrecta'
+                    res.locals.errores = errores
+                    return res.render('login')
+                } else {
+                    //Pongo al usuario en sesión
+                    req.session.user = {
+                        email: usuarioLogueado.email, //Traigo la info de la base de datos
+                        usuario: usuarioLogueado.usuario
+                    }
+                    //Pregunto si el usuario tildó el checkbox para recordarlo
+                    if(req.body.recordarme != undefined) {
+                        res.cookie('cookieUsuario',usuarioLogueado.id, {maxAge:1000*6*100} )
+                    }
+                    return res.redirect('/')
+                }
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+    },
+
+    logout: function (req,res) {
+        req.session.destroy()
+
+        if(req.cookies.cookieUsuario != undefined) {
+            res.clearCookie('cookieUsuario')
+        }
+    },
     editar: function (req, res) {
         return res.render('profile-edit', {infoUsuario: db.usuario});
     },

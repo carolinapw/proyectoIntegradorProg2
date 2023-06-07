@@ -12,8 +12,11 @@
 				<h2 class="products-title">Ingresar</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
+			<%if(locals.errores != undefined) { %>
+				<p><%= errores.message%></p>
+			<% } %>
 			<h2 class="col-12 formularios"> 
-				<form action="/users/profile" method ="POST">
+				<form action="/users/login" method ="POST">
 					<div class="forms">
 						<input type="email" name="email" value="" placeholder="EMAIL">
 					</div>
