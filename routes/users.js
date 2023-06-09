@@ -16,6 +16,7 @@ router.post('/logout', usersController.logout);
 
 
 router.get('/profile/edit', usersController.editar);
+router.post('/profile/edit', usersController.actualizar);
 
 router.get('/profile/follow', usersController.seguir);
 

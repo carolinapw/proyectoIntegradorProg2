@@ -7,11 +7,10 @@ router.get('/:id', productsController.detalle);
 router.get('/:id/edit', productsController.showEdit);
 //router.post('/:id/edit', productsController.edit);
 
-
+router.get('/add', productsController.agregar)
 
 // router.get('/borrar', productsController.borrar);
 
-// router.get('/agregar', productsController.agregar);
 
 
 
