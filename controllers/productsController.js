@@ -26,19 +26,6 @@ let productsController = {
             .catch(function(error) {
                 console.log(error);
             })
-
-        // if (idRuta < db.productos.length) {
-        //     for (let i = 0; i < db.productos.length; i++) {          
-        //         if (idRuta == db.productos[i].id) {
-        //             resultados.push(db.productos[i]);
-        //         }
-        //     }
-            
-        // }
-        // return res.render('product', {
-        //     productsDb: resultados[0],
-        //     commentsDb: db.comentarios
-        // })
         
     },
     showEdit: function (req, res) {
