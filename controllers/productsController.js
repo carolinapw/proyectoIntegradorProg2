@@ -47,6 +47,9 @@ let productsController = {
             infoUsuario: db.usuario
         });
     },
+    agregar: function (req, res) {
+        
+    }
     // comment: function (req, res) {
         
     //     return res.render('product', {commentsDb: db.comentarios})

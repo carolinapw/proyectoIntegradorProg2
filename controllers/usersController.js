@@ -18,10 +18,6 @@ let usersController = {
                 return res.render('profile', {infoUsuario: dataUsuario}) //cambiar cosas en el profile.ejs
             })
 
-        // return res.render('profile', {
-        //     infoUsuario: db.usuario,
-        //     productsDb: db.productos
-        // });
     },
 
     showRegistro: function (req, res) {
@@ -136,9 +132,13 @@ let usersController = {
         if(req.cookies.cookieUsuario != undefined) {
             res.clearCookie('cookieUsuario')
         }
+        return res.redirect('/')
     },
     editar: function (req, res) {
-        return res.render('profile-edit', {infoUsuario: db.usuario});
+        return res.render('profile-edit');
+    },
+    actualizar: function (req, res) {
+        //Completar
     },
     seguir: function (res, render) {
         return res.render('profile') //qué página que renderiza?
