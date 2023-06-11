@@ -32,10 +32,12 @@ app.use(session({
   resave:false
 }));
 
+//Pasar datos de session a las vistas
 //Header logueado y deslogueado
 app.use(function(req, res, next) {
   if (req.session.user != undefined) {
     res.locals.user = req.session.user
+    return next();
   }
   return next();
   });

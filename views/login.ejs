@@ -13,7 +13,7 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<%if(locals.errores) { %>
-				<p><%= errores.message%></p>
+				<p><%= locals.errores.message%></p>
 			<% } %>
 			<h2 class="col-12 formularios"> 
 				<form action="/users/login" method ="POST">
