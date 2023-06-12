@@ -118,7 +118,7 @@ let usersController = {
     logout: function (req,res) {
         req.session.destroy()
 
-        if(req.cookies.cookieUsuario != undefined) {
+        if(req.cookies.cookieUsuario !== undefined) {
             res.clearCookie('cookieUsuario')
         }
         return res.redirect('/')
