@@ -102,10 +102,7 @@ let usersController = {
                     return res.render('login')
                 } else {
                     //Pongo al usuario en sesión
-                    req.session.user = {
-                        email: usuarioLogueado.email, //Traigo la info de la base de datos
-                        usuario: usuarioLogueado.usuario
-                    }
+                    req.session.user = usuarioLogueado
                     //Pregunto si el usuario tildó el checkbox para recordarlo
                         if(req.body.recordarme != undefined) {
                             res.cookie('cookieUsuario',usuarioLogueado.id, {maxAge:1000*6*100} )
