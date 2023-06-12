@@ -35,7 +35,7 @@ let usersController = {
         errores.message = 'Completar el campo password';
         res.locals.errores = errores;
         return res.render('register');
-    } else if(req.body.pass.length < 3) {
+    } else if(req.body.pass.length <= 3) {
         errores.message = 'La constraseña debe tener más de tres caracteres';
         res.locals.errores = errores;
         return res.render('register');
