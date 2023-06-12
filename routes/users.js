@@ -5,7 +5,7 @@ let usersController = require('../controllers/usersController');
 
 
 /* GET users listing. */
-
+router.get('/profile/:id', usersController.perfil);
 router.get('/register', usersController.showRegistro);
 router.post('/register', usersController.registro);
 
@@ -20,7 +20,7 @@ router.post('/profile/edit', usersController.actualizar);
 
 router.get('/profile/follow', usersController.seguir);
 
-router.get('/profile/:id', usersController.perfil);
+
 //router.get('/profile/unfollow', usersController.dejarDeSeguir);
 
 

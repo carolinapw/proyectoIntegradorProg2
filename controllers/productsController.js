@@ -5,7 +5,7 @@ let productsController = {
 
     agregarProducto: function (req,res) {
         if(req.session.user != undefined){
-            return res.render('product-add', {usuarios: []});
+            return res.render('product-add'); //{usuarios: []}
         } else{ 
             return res.redirect('users/register')
         }
