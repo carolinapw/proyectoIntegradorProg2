@@ -24,7 +24,11 @@ let usersController = {
         return res.render('register');
     },
     registro: function (req, res) { //toma los datos del formulario y los usa para crear el usuario en la base de datos.
+<<<<<<< HEAD
         //return res.send(req.body)
+=======
+        //return res.render("register")
+>>>>>>> 0e8c2d0b2199f7688eeb71694fd2216e6cabe0a4
     let errores = {};
 
     if(req.body.email=='') {
@@ -91,20 +95,12 @@ let usersController = {
             })
             .then(function (usuarioLogueado) {
                 if(usuarioLogueado == null) {
-                    errores.message = 'Completar el campo email';
-                    res.locals.errores = errores;
-                    return res.render('login')
-                }
-                if(usuarioLogueado==undefined) { // No funciona
                     errores.message = 'El email no existe';
                     res.locals.errores = errores;
                     return res.render('login')
-                }
-
-                //Validar la contraseña antes de loguear
-                let check = bcrypt.compareSync(req.body.pass, usuarioLogueado.password)
-                
-                if(check == false) {
+                    
+                } else if (bcrypt.compareSync(req.body.pass, usuarioLogueado.contrasena) == false){
+                    //Validar la contraseña antes de loguear
                     errores.message = 'La contraseña es incorrecta'
                     res.locals.errores = errores
                     return res.render('login')
@@ -115,8 +111,8 @@ let usersController = {
                         usuario: usuarioLogueado.usuario
                     }
                     //Pregunto si el usuario tildó el checkbox para recordarlo
-                    if(req.body.recordarme != undefined) {
-                        res.cookie('cookieUsuario',usuarioLogueado.id, {maxAge:1000*6*100} )
+                        if(req.body.recordarme != undefined) {
+                            res.cookie('cookieUsuario',usuarioLogueado.id, {maxAge:1000*6*100} )
                     }
                     return res.redirect('/')
                 }

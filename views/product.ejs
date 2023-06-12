@@ -40,8 +40,8 @@
 						<% } %>
 
 					</section>
-					<form class="form" action="/products/<%= productsDb.id %>" method="get">
-						<input class="form-input texto" type="text" value="" placeholder="Agregar comentario">
+					<form class="form" action="/comments/<%= productsDb.id %>" method="POST">
+						<input class="form-input texto" type="text" value="" name='comentario' placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
 					</form>
 					<hr>
