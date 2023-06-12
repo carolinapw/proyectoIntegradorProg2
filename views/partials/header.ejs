@@ -35,8 +35,7 @@
             <ul class="right-navbar">
                 <!-- Solo logueado -->
                 <% if (locals.user != undefined){ %>
-                     <li><a href="profile.html">
-                        Nombre del usuario <i class="fas fa-user"></i>
+                     <li><a href="profile.html">Bienvenido, <%= locals.user.usuario%><i class="fas fa-user"></i>
                     </a>
                 </li>
                 <li>
