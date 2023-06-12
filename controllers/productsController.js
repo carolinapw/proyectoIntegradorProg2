@@ -42,7 +42,21 @@ let productsController = {
         });
     },
     edit: function(req,res) {
-
+        let errores = {message: ""};
+        if (req.body.producto == '') {
+            errores.message = errores.message + "Completar el campo nombre";
+        }
+        if (req.body.descripcion == '') {
+            errores.message = errores.message + 'Completar la descripcion del producto';
+        }
+        else {
+            let producto= {
+                nombreProducto: req.body.producto,
+                descripcion:req.body.descripcion
+            }
+            db.Product.update (producto, {where: {id: req.params.id}});
+            return res.redirect ("/products" + req.params.id);
+        }
     },
     nuevoProducto: function (req, res) {
         let errores = {message: ''}
