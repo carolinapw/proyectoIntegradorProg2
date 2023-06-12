@@ -27,6 +27,7 @@ let productsController = {
             ]
         })
             .then(function (resultados) {
+                //return res.send(resultados)
                 return res.render('product', {
                     productsDb: resultados,
                 })
