@@ -90,31 +90,33 @@ let usersController = {
                 ]
             })
             .then(function (usuarioLogueado) {
-                // return res.send(usuarioLogueado)
-                if(usuarioLogueado != null) {
-                let comparacion = bcrypt.compareSync(req.body.pass, usuarioLogueado.contrasena)
-                    if (comparacion){
-                        //Pongo al usuario en sesión
-                        req.session.user = {
-                            email: usuarioLogueado.email, //Traigo la info de la base de datos
-                            usuario: usuarioLogueado.usuario
-                        }
-                        //Pregunto si el usuario tildó el checkbox para recordarlo
-                            if(req.body.recordarme != undefined) {
-                                res.cookie('cookieUsuario',usuarioLogueado.id, {maxAge:1000*6*100} )
-                        }
-                        return res.redirect('/')} 
-                        else {
-                        //Validar la contraseña antes de loguear
-                        errores.message = 'La contraseña es incorrecta';
-                        res.locals.errores = errores;
-                        return res.redirect('login');
-                } 
-                }})
-                .catch(function(error){
-                    console.log(error);
-                })
-   },
+                if(usuarioLogueado == null) {
+                    errores.message = 'El email no existe';
+                    res.locals.errores = errores;
+                    return res.render('login')
+                    
+                } else if (bcrypt.compareSync(req.body.pass, usuarioLogueado.contrasena) == false){
+                    //Validar la contraseña antes de loguear
+                    errores.message = 'La contraseña es incorrecta'
+                    res.locals.errores = errores
+                    return res.render('login')
+                } else {
+                    //Pongo al usuario en sesión
+                    req.session.user = {
+                        email: usuarioLogueado.email, //Traigo la info de la base de datos
+                        usuario: usuarioLogueado.usuario
+                    }
+                    //Pregunto si el usuario tildó el checkbox para recordarlo
+                        if(req.body.recordarme != undefined) {
+                            res.cookie('cookieUsuario',usuarioLogueado.id, {maxAge:1000*6*100} )
+                    }
+                    return res.redirect('/')
+                }
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+    },
 
     logout: function (req,res) {
         req.session.destroy()
