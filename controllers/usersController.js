@@ -24,11 +24,7 @@ let usersController = {
         return res.render('register');
     },
     registro: function (req, res) { //toma los datos del formulario y los usa para crear el usuario en la base de datos.
-<<<<<<< HEAD
-        //return res.send(req.body)
-=======
         //return res.render("register")
->>>>>>> 0e8c2d0b2199f7688eeb71694fd2216e6cabe0a4
     let errores = {};
 
     if(req.body.email=='') {

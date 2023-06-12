@@ -4,6 +4,11 @@
 	<!-- Header -->
 	<%- include('./partials/header') %>
 
+	<% if (res.locals.user != undefined){ %>
+		<%- include('partials/headerLogueado') %>
+	<% } else{ %>
+		<%- include('partials/header) %>
+	<% } %>
 	<!-- Banner -->
 	<div class="banner">
 		<img src="/images/dior_desk.webp" alt="Banner de ofertas">

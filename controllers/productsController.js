@@ -34,6 +34,19 @@ let productsController = {
             .catch(function(error) {
                 console.log(error);
             })
+
+        // if (idRuta < db.productos.length) {
+        //     for (let i = 0; i < db.productos.length; i++) {          
+        //         if (idRuta == db.productos[i].id) {
+        //             resultados.push(db.productos[i]);
+        //         }
+        //     }
+            
+        // }
+        // return res.render('product', {
+        //     productsDb: resultados[0],
+        //     commentsDb: db.comentarios
+        // })
         
     },
     showEdit: function (req, res) {
@@ -44,7 +57,7 @@ let productsController = {
     },
     nuevoProducto: function (req, res) {
         let errores = {message: ''}
-        if (req.body.nombreProducto == '') {
+        if (req.body.producto == '') {
             errores.message = errores.message + 'Completar el campo marca';
         }
         if (req.body.descripcion == ''){
