@@ -95,7 +95,7 @@ let usersController = {
                     res.locals.errores = errores;
                     return res.render('login')
                     
-                } else if (bcrypt.compareSync(req.body.pass, usuarioLogueado.password) == false){
+                } else if (bcrypt.compareSync(req.body.pass, usuarioLogueado.contrasena) == false){
                     //Validar la contraseña antes de loguear
                     errores.message = 'La contraseña es incorrecta'
                     res.locals.errores = errores
