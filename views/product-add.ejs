@@ -13,6 +13,9 @@
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12 formularios"> 
+				<% if(locals.errores){ %>
+					<p> <%= errores.message%> </p>
+				<% } %>
 				<form action="/users/profile/<%= infoUsuario.id  %>" method ="GET">
 					<div class="forms">
 						<input type="file" name="imagen" value="">
