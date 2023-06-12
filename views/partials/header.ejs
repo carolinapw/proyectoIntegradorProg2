@@ -33,15 +33,11 @@
             </ul>
 
             <ul class="right-navbar">
-                <!-- Solo logueado-->
+                <!-- Solo logueado -->
+                <% if (locals.user != undefined){ %>
                      <li><a href="profile.html">
                         Nombre del usuario <i class="fas fa-user"></i>
                     </a>
-                    <% if (locals.user != undefined){ %>
-                        <%- include('partials/headerLogueado') %>
-                    <% } else{ %>
-                        <%- include('partials/header) %>
-                    <% } %>
                 </li>
                 <li>
                     <form action="" method="post">
@@ -50,13 +46,15 @@
                         </button>
                     </form>
                 </li> 
-                <li>
-                    <a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i>
+                <% } %>
+                <% if (locals.user == undefined){ %>
+                <li><a href="/users/register">Creá tu cuenta <i class="far fa-address-card"></i>
                     </a>
                 </li>
                 <li>
                     <a href="/users/login">Ingresá <i class="fas fa-sign-in-alt"></i></a>
                 </li>
+                <% } %>
             </ul>
         </nav>
     </div>
