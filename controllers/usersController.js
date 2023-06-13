@@ -11,7 +11,10 @@ let usersController = {
         db.User.findByPk(userId, {
             include: [
                 {association:'product'},
-                {association:'comment'}
+                {association:'comment', 
+                order: [
+                    ['createdAt', 'DESC']
+                ]}
             ]
         })
             .then(function (dataUsuario) {
@@ -123,18 +126,22 @@ let usersController = {
         }
         return res.redirect('/')
     },
+
     editar: function (req, res) {
         return res.render('profile-edit');
     },
     actualizar: function (req, res) {
         //Completar
     },
+
     seguir: function (res, render) {
         return res.render('profile') //qué página que renderiza?
+        
+    },
+    dejarDeSeguir: function (req, res) {
+        return res.render()
     }
-    // dejarDeSeguir: function (req, res) {
-    //     return res.render()
-    // }
+
 }
 
 module.exports = usersController

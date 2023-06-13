@@ -19,6 +19,7 @@
 				<article class="col-12 col-lg-8 product-detail-info">
 					<img src="/images/products/<%= productsDb.imagen %>" alt="" class="product-detail-img">
 					<p class="product-detail-description texto"><%= productsDb.descripcion %></p>
+					<p class="product-detail-description texto">Lo vende el usuario: <%= productsDb.user.usuario %></p>
 				</article>
 				<div class="col-12 col-lg-4">
 					<section class="comments texto">
@@ -29,6 +30,7 @@
 								<p class="user">
 								<strong> <a href="/users/profile/<%= productsDb.comment[i].user.id %>"> <%= productsDb.comment[i].user.usuario %> </a> </strong>
 								<%= productsDb.comment[i].texto %></p>
+								
 							</div>
 						</article>
 						<% } %>
