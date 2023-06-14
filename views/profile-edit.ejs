@@ -3,7 +3,7 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
@@ -12,13 +12,16 @@
 				<h2 class="products-title">Editar mi perfil</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
+			<% if(locals.errores){ %>
+				<p> <%= errores.message%> </p>
+			<% } %>
 			<h2 class="col-12 formularios"> 
-				<form action="/users/profile/<%= infoUsuario.id %>" method ="GET">
+				<form action="/users/profile/edit" method ="POST">
 					<div class="forms">
-						<input type="email" name="email" value="" placeholder="EMAIL">
+						<input type="email" name="email" value="<%=user.email%>" placeholder="EMAIL">
 					</div>
 					<div class="forms">
-						<input type="text" name="usuario" value="" placeholder="USUARIO">
+						<input type="text" name="usuario" value="<%=user.usuario%>" placeholder="USUARIO">
 					</div>
 					<div class="forms">
 						<input type="password" name="pass" value="" placeholder="CONTRASEÑA">

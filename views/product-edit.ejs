@@ -3,20 +3,20 @@
 
 <body>
 	<!-- Header -->
-	
+	<%- include('./partials/headerLogueado') %>
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Agregar productos</h2>
+				<h2 class="products-title">Editar productos</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12 formularios"> 
 				<% if(locals.errores){ %>
 					<p> <%= errores.message%> </p>
 				<% } %>
-				<form action="/products/add" method ="POST">
+				<form action="/users/profile/<%= infoUsuario.id  %>" method ="GET">
 					<div class="forms">
 						<input type="file" name="imagen" value="">
 					</div>
@@ -27,7 +27,10 @@
 						<input type="text" name="descripcion" value="" placeholder="Descripción del producto">
 					</div>
 					<div class="forms">
-						<button class="formularios" type="submit">Agregar producto</button>
+						<input type="date" name="date" value="">
+					</div>
+					<div class="forms">
+						<button class="formularios" type="submit">Editar producto</button>
 					</div>
 				</form>
 			</h2>

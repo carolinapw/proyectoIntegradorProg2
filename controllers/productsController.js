@@ -7,7 +7,7 @@ let productsController = {
         if(req.session.user != undefined){
             return res.render('product-add'); //{usuarios: []}
         } else{ 
-            return res.redirect('users/register')
+            return res.redirect('/users/register')
         }
     },
 
@@ -26,7 +26,7 @@ let productsController = {
             ]
         })
             .then(function (resultados) {
-                //return res.send(resultados)
+                return res.send(resultados)
                 return res.render('product', {
                     productsDb: resultados,
                 })
@@ -36,7 +36,7 @@ let productsController = {
             })
     },
     showEdit: function (req, res) {
-        return res.render('product-add', {
+        return res.render('product-edit', {
             productsDb: db.productos,
             infoUsuario: db.usuario
         });
@@ -80,8 +80,8 @@ let productsController = {
             usuarios_id: req.session.user.id
         }
         db.Product.create(productoNuevo)
-            .then(function () {
-                return res.redirect() //a donde???
+            .then(function (productoNuevo) {
+                return res.redirect('/products/' + productoNuevo.id) //a donde???
             })
             .catch(function(error) {
                 console.log(error);
