@@ -36,26 +36,38 @@ let productsController = {
             })
     },
     showEdit: function (req, res) {
-        return res.render('product-edit', {
-            productsDb: db.productos,
-            infoUsuario: db.usuario
-        });
+        db.Product.findByPk(req.params.id)
+            .then(function (product) {
+                return res.render('product-edit', {producto: product})
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
+    
     },
     edit: function(req,res) {
         let errores = {message: ""};
         if (req.body.producto == '') {
-            errores.message = errores.message + "Completar el campo nombre";
+            errores.message = errores.message + "Completar el campo Nombre del producto";
         }
         if (req.body.descripcion == '') {
             errores.message = errores.message + 'Completar la descripcion del producto';
         }
-        else {
+        if (errores.message.length > 0) {
+            res.locals.errores = errores;
+            return res.render('product-edit');
+        } else {
             let producto= {
                 nombreProducto: req.body.producto,
-                descripcion:req.body.descripcion
+                descripcion: req.body.descripcion,
+                //imagen: req.file.filename
+                usuarios_id: req.session.user.id 
             }
-            db.Product.update (producto, {where: {id: req.params.id}});
-            return res.redirect ("/products" + req.params.id);
+            db.Product.update (producto, {where: {id: req.params.id}})
+                .then(function (producto) {
+                    return res.redirect ("/products/" + req.params.id);
+                })
+            
         }
     },
     nuevoProducto: function (req, res) {

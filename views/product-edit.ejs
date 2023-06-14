@@ -3,31 +3,28 @@
 
 <body>
 	<!-- Header -->
-	<%- include('./partials/headerLogueado') %>
+	
 
 	<!-- Novedades -->
 	<div class="container products-wrapper">
 		<div class="row">
 			<div class="col-12">
-				<h2 class="products-title">Editar productos</h2>
+				<h2 class="products-title">Editar producto</h2>
 			</div>
 			<!-- Show the "ultimos" products -->
 			<h2 class="col-12 formularios"> 
 				<% if(locals.errores){ %>
 					<p> <%= errores.message%> </p>
 				<% } %>
-				<form action="/users/profile/<%= infoUsuario.id  %>" method ="GET">
+				<form action="/products/<%= producto.id%>/edit" method ="POST">
 					<div class="forms">
 						<input type="file" name="imagen" value="">
 					</div>
 					<div class="forms">
-						<input type="text" name="producto" value="" placeholder="Nombre del producto">
+						<input type="text" name="producto" value="<%= producto.nombreProducto%>" placeholder="Nombre del producto">
 					</div>
 					<div class="forms">
-						<input type="text" name="descripcion" value="" placeholder="Descripción del producto">
-					</div>
-					<div class="forms">
-						<input type="date" name="date" value="">
+						<input type="text" name="descripcion" value="<%= producto.descripcion%>" placeholder="Descripción del producto">
 					</div>
 					<div class="forms">
 						<button class="formularios" type="submit">Editar producto</button>
