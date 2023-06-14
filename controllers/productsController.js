@@ -67,7 +67,9 @@ let productsController = {
                 .then(function (producto) {
                     return res.redirect ("/products/" + req.params.id);
                 })
-            
+                .catch(function(error) {
+                    console.log(error);
+                })
         }
     },
     nuevoProducto: function (req, res) {
