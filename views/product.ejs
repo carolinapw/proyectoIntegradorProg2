@@ -8,9 +8,16 @@
 	<div class="container products-wrapper">
 		<div class="d-flex align-items-center">
 			<h2 class="products-title"><%= productsDb.nombreProducto %></h2>
-			<% if (locals.user != undefined) { %> 
+			<% if (locals.user != undefined && locals.user.id == productsDb.user.id) { %> 
 			<p class="product-detail-description">
-				<a href="/products/<%= productsDb.id %>/edit">Editar</a>
+				
+				<form action="/products/<%= productsDb.id %>/edit" method="get">
+					<button type="submit">Editar</button>
+				</form>
+				<form action="/products/borrar/<%= productsDb.id %>" method="post">
+					<button type="submit">Borrar</button>
+				</form>
+				
 			</p>
 			<% } %>
 				
