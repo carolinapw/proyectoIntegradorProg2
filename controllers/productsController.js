@@ -26,7 +26,7 @@ let productsController = {
             ]
         })
             .then(function (resultados) {
-                return res.send(resultados)
+                //return res.send(resultados)
                 return res.render('product', {
                     productsDb: resultados,
                 })
@@ -67,7 +67,7 @@ let productsController = {
             errores.message = errores.message + 'Completar la descripcion del producto';
         }
         // if (req.file == undefined) {
-        //   errores.message = errores.message + 'Agregar imagen';
+        //     errores.message = errores.message + 'Agregar imagen';
         // }
         if (errores.message.length > 0) {
             res.locals.errores = errores;
@@ -76,7 +76,7 @@ let productsController = {
         let productoNuevo = {
             nombreProducto: req.body.producto,
             descripcion: req.body.descripcion,
-            //image: req.file.filename,
+            //imagen: req.file.imagen,
             usuarios_id: req.session.user.id
         }
         db.Product.create(productoNuevo)
