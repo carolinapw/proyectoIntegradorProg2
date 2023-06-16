@@ -46,8 +46,13 @@
 
 					</section>
 					<form class="form" action="/comments/<%= productsDb.id %>" method="POST">
+						<% if (locals.user != undefined) { %>
 						<input class="form-input texto" type="text" value="" name='comentario' placeholder="Agregar comentario">
 						<button type="submit" class="buy-now-button">AGREGAR COMENTARIO</button>
+						<% } %>
+						<% if (locals.user == undefined) { %>
+						<button type="submit" class="buy-now-button">DEBES ESTAR LOGUEADO PARA COMENTAR</button>
+						<% } %>
 					</form>
 					<hr>
 				</div>
