@@ -182,11 +182,22 @@ let usersController = {
             })
         }
     }, 
-
     seguir: function (res, render) {
-        return res.render('profile') //qué página que renderiza?
         
+        db.Follower.create({
+            seguidor_id: req.session.user.id,
+            seguido_id: req.params.id
+            }) 
+
+            .then (function(seguidores){
+                return res.rendirect("/users/profile" + req.params.id)
+
+            })
+            .catch(function(error) {
+                console.log(error);
+            })
     },
+
     dejarDeSeguir: function (req, res) {
         return res.render()
     }
