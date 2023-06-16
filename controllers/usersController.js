@@ -156,7 +156,7 @@ let usersController = {
             })
             .then(function (user) {
                 if (user !== null) {
-                    errores.message = 'El email ya existe, elija uno nuevo';
+                    errores.message = 'Hola';
                     res.locals.errores = errores;
                     return res.render('profile-edit');
                 } else {
