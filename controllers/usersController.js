@@ -136,56 +136,33 @@ let usersController = {
         return res.render('profile-edit');
     },
     actualizar: function (req, res) {
-        let errores = {}
+        let user = {}
 
-        if (req.body.email == '') {
-            errores.message = 'Completar el campo email';
-            res.locals.errores = errores;
-            return res.render('profile-edit');
-        } else if (req.body.usuario == '') {
-            errores.message = 'Completar el campo usuario';
-            res.locals.errores = errores;
-            return res.render('profile-edit');
-        // } else if (req.file == undefined) {
-        //     errores.message = 'Completar el campo imagen';
-        //     res.locals.errores = errores;
-        //     return res.render('profile-edit');
-        } else {
-            db.User.findOne({
-                where: [{ email: req.body.email }]
-            })
-            .then(function (user) {
-                if (user !== null) {
-                    errores.message = 'El email ya existe, elija uno nuevo';
-                    res.locals.errores = errores;
-                    return res.render('profile-edit');
-                } else {
-                    let user = {
-                        usuario: req.body.usuario,
-                        email: req.body.email,
-                        contrasena: req.session.user.pass,
-                        fechaNacimiento: req.session.user.date,
-                        //fotoPerfil: req.file.filename
-                    }
-
-
-                    //req.session.user.image = user.image
-
-                    db.User.update(user, 
-                        { where: { id: req.session.user.id } })
-                        
-                        .then(function (userActualizado) {
-                            return res.redirect('/users/profile/' + req.session.user.id)
-                        })
-                        .catch(function(error) {
-                            console.log(error);
-                        })
+        if(req.body.usuario !== ""){
+            user.usuario = req.body.usuario
+        }
+        if(req.body.pass !== ""){
+            user.contrasena = bcrypt.hashSync(req.body.pass, 10)
+        }
+        //Recibir los datos del formulario        
+        //Hacer un update
+ 
+        db.User.update(user, 
+            { where: { id: req.session.user.id } })
+            
+            .then(function (userActualizado) {
+                if(req.body.usuario !== ""){
+                    req.session.user.usuario = user.usuario
                 }
+                
+                return res.redirect('/users/profile/' + req.session.user.id)
             })
             .catch(function(error) {
                 console.log(error);
             })
-        }
+
+
+
     }, 
     seguir: function (res, render) {
         
