@@ -34,7 +34,12 @@ let usersController = {
         errores.message = 'Completar el campo email';
         res.locals.errores = errores;
         return res.render('register')
-    } else if (req.body.pass==''){
+    } else if (req.body.usuario == '') {
+        errores.message = 'Completar el campo usuario';
+        res.locals.errores = errores;
+        return res.render('register')
+    }
+    else if (req.body.pass==''){
         errores.message = 'Completar el campo password';
         res.locals.errores = errores;
         return res.render('register');
