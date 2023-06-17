@@ -18,6 +18,7 @@
 			<h2 class="col-12 formularios"> 
 				<form action="/users/profile/edit" method ="POST">
 					<div class="forms">
+						<% if (locals.user != undefined) { %>
 						<input type="email" name="email" value="<%=user.email%>" placeholder="EMAIL">
 					</div>
 					<div class="forms">
@@ -37,6 +38,7 @@
 					</div>
 					<div class="forms">
 						<button class="formularios" type="submit" >Editar</button>
+						<% } %>
 					</div>
 				</form>
 			</h2>
