@@ -182,7 +182,7 @@ let usersController = {
             })
         }
     }, 
-    seguir: function (res, render) {
+    seguir: function (req, res) {
         
         db.Follower.create({
             seguidor_id: req.session.user.id,
@@ -190,7 +190,7 @@ let usersController = {
             }) 
 
             .then (function(seguidores){
-                return res.rendirect("/users/profile" + req.params.id)
+                return res.redirect("/users/profile" + req.params.id)
 
             })
             .catch(function(error) {
